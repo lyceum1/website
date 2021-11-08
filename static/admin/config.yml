@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: dev
+
+media_folder: static/upload
+show_preview_links: false
+locale: uk
+
+collections:
+  - name: news
+    label: Новини
+    label_singular: Новину
+    summary: '{{title}} — {{day}}.{{month}}.{{year}}'
+    description: >
+      Розділ керування новинами сайту.
+    folder: content/news
+    create: true
+    slug: '{{slug}}'
+    path: '{{year}}/{{month}}/{{day}}/{{slug}}'
+    filter: 
+      field: visible
+      value: true
+    editor:
+      preview: true
+    fields:
+      - { label: Заголовок, name: title, widget: string }
+      - { label: Зображення, name: banner, widget: image, hint: Рекомендоване відношення сторін 3:2 }
+      - { label: Дата, name: date, widget: datetime }
+      - { label: Зміст, name: body, widget: markdown, hint: Основний вміст новини }
+      - { label: Видимий, name: visible, widget: hidden, default: true }
+
+  - name: study
+    label: Навчання
+    summary: '{{title}}'
+    folder: content/study
+    nested:
+      depth: 4
+      summary: '{{title}}'
+    create: false
+    delete: false
+    editor:
+      preview: true
+    fields:
+      - { label: Зміст, name: body, widget: markdown }
+
+  - name: about
+    label: Про нас
+    summary: '{{title}}'
+    folder: content/about
+    nested:
+      depth: 4
+      summary: '{{title}}'
+    create: false
+    delete: false
+    editor:
+      preview: true
+    fields:
+      - { label: Зміст, name: body, widget: markdown }

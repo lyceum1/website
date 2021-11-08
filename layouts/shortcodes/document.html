@@ -1,0 +1,34 @@
+{{ $document := index .Params 0 | absURL }}
+{{ $url := "//docs.google.com/viewer?url=%s&embedded=true" }}
+{{ range $ext := (slice "ppt" "pptx") }}
+    {{ if strings.HasSuffix $document $ext}}
+        {{ $url = "//view.officeapps.live.com/op/embed.aspx?lang=uk&src=%s" }}
+    {{ end }}
+{{ end }}
+
+{{ $presentation := "" }}
+{{ range $ext := (slice "ppt" "pptx") }}
+    {{ if strings.HasSuffix $document $ext}}
+        {{ $presentation = "presentation" }}
+    {{ end }}
+{{ end }}
+
+{{ $isImage := false }}
+{{ range $ext := (slice "png" "jpg" "jpeg") }}
+    {{ if strings.HasSuffix $document $ext}}
+        {{ $isImage = true }}
+    {{ end }}
+{{ end }}
+
+<div class="embed_wrapper {{ index .Params 1 }} {{ $presentation }} ">
+    <div class="embed">
+        {{ if $isImage}}
+            <img src="{{ index .Params 0 }}" alt=""></img>
+        {{ else }}
+            <div class="loader">
+                <a href="{{ index .Params 0 }}">Link</a>
+            </div>
+            <iframe src="{{ printf $url $document }}" loading="lazy" allowfullscreen frameborder="0"></iframe>
+        {{ end }}
+    </div>
+</div>

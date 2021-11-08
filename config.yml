@@ -1,0 +1,295 @@
+title: Ліцей №1
+theme: universal
+languageCode: uk-UA
+defaultContentLanguage: uk
+copyright: Copyright © 2021 Чернівецький ліцей №1 математичного та економічного профілів
+summaryLength: 50
+paginate: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  author: Lyceum Dev Team
+  defaultKeywords: [ліцей 1, сайт]
+  mainSections: [news, study, about, contact]
+  defaultDescription: Офіційний веб-сайт Чернівецького міського ліцею №1
+  dateFormat: 2 January 2006
+  defaultSharingImage: img/sharing.png
+  style: green
+  logo:
+    enable: false
+    text: Ліцей №1
+    default: img/logo.png
+    small: img/logo.png
+  contact:
+    address: м. Чернівці, вул. Штейнбарга 2
+    phones: [(0372)55-07-20, (0372)52-55-73]
+    email: cvlicey-1@meta.ua
+    gmap: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.5324182256422!2d25.929236451031507!3d48.29261077913421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473408995cee460f%3A0x86dfcb54914755f6!2zTHljZXVtIOKEljE!5e0!3m2!1sen!2sua!4v1631627569006!5m2!1suk!2sua
+  admin:
+    url: /admin/
+  carouselHomepage:
+    enable: true
+    autoPlay: true
+    slideSpeed: 2000
+    paginationSpeed: 1000
+  recentPosts:
+    enable: true
+    title: Останні новини
+permalinks:
+  news: /news/:year/:month/:day/:filename/
+menu:
+  main:
+    - name: Головна
+      identifier: menu.main
+      weight: 1
+      url: /
+    - name: Новини
+      identifier: menu.news
+      weight: 2
+      url: /news/
+
+    - name: Навчанння
+      identifier: menu.study
+      weight: 3
+
+    - name: Абітурієнту
+      identifier: menu.study.entrant
+      weight: 1
+      parent: menu.study
+      url: /study/entrant/
+
+    - name: Правила вступу
+      identifier: menu.study.entrant.rules
+      weight: 1
+      parent: menu.study.entrant
+      url: /study/entrant/rules
+
+    - name: Архів завдань
+      identifier: menu.study.entrant.archive
+      weight: 2
+      parent: menu.study.entrant
+      url: /study/entrant/archive/
+
+    - name: Розклад
+      identifier: menu.study.schedule
+      weight: 2
+      parent: menu.study
+      url: /study/schedule/
+
+    - name: Бібліотека
+      identifier: menu.study.library
+      weight: 3
+      parent: menu.study
+      url: /study/library/
+
+    - name: Електронні підручники
+      identifier: menu.study.library.ebook
+      weight: 1
+      parent: menu.study.library
+      url: /study/library/ebook/
+
+    - name: Українська література
+      identifier: menu.study.library.list.ukrainian
+      weight: 2
+      parent: menu.study.library
+      url: /study/library/ukrainian/
+
+    - name: Зарубіжна література
+      identifier: menu.study.library.list.foreign
+      weight: 3
+      parent: menu.study.library
+      url: /study/library/foreign/
+    
+    - name: DMOJ
+      identifier: menu.study.dmoj
+      weight: 4
+      parent: menu.study
+      url: https://dmoj.lyceum1.cv.ua
+
+    - name: Про нас
+      identifier: menu.about
+      weight: 4
+      url: /about/
+
+    - name: Для батьків
+      identifier: menu.about.parents
+      weight: 1
+      parent: menu.about
+      url: /about/parents/
+
+    - name: Документи
+      identifier: menu.about.parents.docs
+      weight: 1
+      parent: menu.about.parents
+      url: /about/parents/docs/
+
+    - name: Пам’ятка
+      identifier: menu.about.parents.memo
+      weight: 2
+      parent: menu.about.parents
+      url: /about/parents/memo/
+
+    - name: Колектив
+      identifier: menu.about.collective
+      weight: 2
+      parent: menu.about
+      url: /about/collective
+
+    - name: Наші досягнення
+      identifier: menu.about.achievements
+      weight: 3
+      parent: menu.about
+      url: /about/achievement/
+
+    - name: Юні науковці
+      identifier: menu.about.achievements.scientists
+      weight: 1
+      parent: menu.about.achievements
+      url: /about/achievement/scientists
+
+    - name: ЗНО 200 балів
+      identifier: menu.about.achievements.zno-200
+      weight: 2
+      parent: menu.about.achievements
+      url: /about/achievement/zno-200
+
+    - name: Ліцейський олімп
+      identifier: menu.about.achievements.olympus
+      weight: 3
+      parent: menu.about.achievements
+      url: /about/achievement/olympus
+
+    - name: Нормативна база
+      identifier: menu.about.docs
+      weight: 4
+      parent: menu.about
+      url: /about/docs/
+
+    - name: Установчі документи
+      identifier: menu.about.docs.founding
+      weight: 1
+      parent: menu.about.docs
+      url: /about/docs/founding
+
+    - name: Освітні програми
+      identifier: menu.about.docs.programs
+      weight: 2
+      parent: menu.about.docs
+      url: /about/docs/programs
+
+    - name: Навчальний план
+      identifier: menu.about.docs.roadmap
+      weight: 3
+      parent: menu.about.docs
+      url: /about/docs/roadmap
+
+    - name: Накази
+      identifier: menu.about.docs.orders
+      weight: 4
+      parent: menu.about.docs
+      url: /about/docs/orders
+
+    - name: ГО «Інтеграл»
+      identifier: menu.about.docs.integral
+      weight: 5
+      parent: menu.about.docs
+      url: /about/docs/integral
+
+    - name: Загальна інформація
+      identifier: menu.about.docs.info
+      weight: 6
+      parent: menu.about.docs
+      url: /about/docs/info
+
+    - name: Співпраця
+      identifier: menu.about.docs.cooperation
+      weight: 7
+      parent: menu.about.docs
+      url: /about/docs/cooperation
+
+    - name: Виховна робота
+      identifier: menu.about.training
+      weight: 5
+      parent: menu.about
+      url: /about/training/
+
+    - name: Права дитини
+      identifier: menu.about.training.rights
+      weight: 1
+      parent: menu.about.training
+      url: /about/training/rights
+
+    - name: Діяльність закладу
+      identifier: menu.about.training.activity
+      weight: 2
+      parent: menu.about.training
+      url: /about/training/activity
+
+    - name: Запобігання булінгу
+      identifier: menu.about.training.bullying
+      weight: 3
+      parent: menu.about.training
+      url: /about/training/bullying
+
+    - name: Святкування
+      identifier: menu.about.training.celebration
+      weight: 4
+      parent: menu.about.training
+      url: /about/training/celebration
+
+    - name: Безпечне середовище
+      identifier: menu.about.training.safeenv
+      weight: 5
+      parent: menu.about.training
+      url: /about/training/safeenv
+
+    - name: Творчість
+      identifier: menu.about.art
+      weight: 6
+      parent: menu.about
+      url: /about/art/
+
+    - name: Літературна світлиця
+      identifier: menu.about.art.literature
+      weight: 1
+      parent: menu.about.art
+      url: /about/art/literature
+
+    - name: Журналістські пошуки
+      identifier: menu.about.art.journalism
+      weight: 2
+      parent: menu.about.art
+      url: /about/art/journalism
+
+    - name: Психологічна служба
+      identifier: menu.about.psychology
+      weight: 7
+      parent: menu.about
+      url: /about/psychology/
+
+    - name: Найцікавіше
+      identifier: menu.about.psychology.interesting
+      weight: 1
+      parent: menu.about.psychology
+      url: /about/psychology/interesting
+  
+    - name: Профорієнтація
+      identifier: menu.about.psychology.guidance
+      weight: 2
+      parent: menu.about.psychology
+      url: /about/psychology/guidance
+  
+    - name: Корисні посилання
+      identifier: menu.about.links
+      weight: 8
+      parent: menu.about
+      url: /about/links/
+
+    - name: Контакти
+      identifier: menu.contact
+      weight: 5
+      url: /contact/

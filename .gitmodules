@@ -1,0 +1,4 @@
+[submodule "themes/universal"]
+	path = themes/universal
+	url = https://github.com/lyceum1/hugo-universal-theme
+	branch = custom
