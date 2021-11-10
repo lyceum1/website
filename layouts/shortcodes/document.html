@@ -25,10 +25,7 @@
         {{ if $isImage}}
             <img src="{{ index .Params 0 }}" alt=""></img>
         {{ else }}
-            <div class="loader">
-                <a href="{{ index .Params 0 }}">Link</a>
-            </div>
-            <iframe src="{{ printf $url $document }}" loading="lazy" allowfullscreen frameborder="0"></iframe>
+            <iframe src="{{ .Page.Permalink }}{{ printf $url $document }}" loading="lazy" allowfullscreen frameborder="0"></iframe>
         {{ end }}
     </div>
 </div>
