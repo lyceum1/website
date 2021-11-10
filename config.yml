@@ -224,27 +224,33 @@ menu:
       parent: menu.about.training
       url: /about/training/rights
 
+    - name: Правила поведінки
+      identifier: menu.about.training.duty
+      weight: 2
+      parent: menu.about.training
+      url: /about/training/duty
+
     - name: Діяльність закладу
       identifier: menu.about.training.activity
-      weight: 2
+      weight: 3
       parent: menu.about.training
       url: /about/training/activity
 
     - name: Запобігання булінгу
       identifier: menu.about.training.bullying
-      weight: 3
+      weight: 4
       parent: menu.about.training
       url: /about/training/bullying
 
     - name: Святкування
       identifier: menu.about.training.celebration
-      weight: 4
+      weight: 5
       parent: menu.about.training
       url: /about/training/celebration
 
     - name: Безпечне середовище
       identifier: menu.about.training.safeenv
-      weight: 5
+      weight: 6
       parent: menu.about.training
       url: /about/training/safeenv
 

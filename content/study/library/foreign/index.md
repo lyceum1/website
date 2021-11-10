@@ -38,7 +38,7 @@ title: Зарубіжна література
 
 *  **Жуль Верн** [«П’ятнадцятирічний капітан»](https://www.ukrlib.com.ua/world/printit.php?tid=437)
 
-* **Роберт Стівенсон**[«Острів скарбів»](https://www.ukrlib.com.ua/world/printit.php?tid=238)
+* **Роберт Стівенсон** [«Острів скарбів»](https://www.ukrlib.com.ua/world/printit.php?tid=238)
 
 * **Чарльз Діккенс** [«Різдвяна пісня в прозі»](https://www.ukrlib.com.ua/world/printit.php?tid=220)
 

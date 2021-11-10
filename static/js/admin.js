@@ -77,7 +77,7 @@ CMS.registerEditorComponent({
                 { label: 'Альбомна', value: 'album' },
                 { label: 'Портретна', value: 'portrait' }
             ],
-            default: ['Альбомна']
+            default: ['album']
         }
     ],
     pattern: /{{< document "(.+?)" "(.+?)" >}}/,

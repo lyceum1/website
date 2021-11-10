@@ -3,13 +3,15 @@ title: Права дитини
 ---
 ## Інспектор СЮП ВП Чернівецького РУП ГУНП в Чернівецькій області
 
-<table class="table table-responsive table-bordered">
-    <tbody>
-        <tr style="text-align: center;">
-            <td><h6>Ім’я</h6></td>
-            <td><h6>Адреса</h6></td>
-            <td><h6>Контактний телефони</h6></td>
+<table class="table table-sm table-responsive table-bordered">
+    <thread>
+        <tr>
+            <th class="text-center">Ім’я</th>
+            <th class="text-center">Адреса</th>
+            <th class="text-center">Контактний телефон</th>
         </tr>
+    </thread>
+    <tbody>
         <tr>
             <td>Балакін Роман Віталійович</td>
             <td>Чернівецьке РУП, вул. Білоусова, 19</td>
@@ -23,12 +25,14 @@ title: Права дитини
 ## Контакти уповноважених органів для реагування на порушення прав та свобод дитини
 
 <table class="table table-responsive table-bordered">
-    <tbody>
-        <tr style="text-align: center;">
-            <td><h6>Назва організації/установи</h6></td>
-            <td><h6>Адреса</h6></td>
-            <td><h6>Контактні телефони</h6></td>
+    <thread>
+        <tr>
+            <th class="text-center">Назва організації/установи</th>
+            <th class="text-center">Адреса</th>
+            <th class="text-center">Контактні телефони</th>
         </tr>
+    </thread>
+    <tbody>
         <tr>
             <td>Служба у справах дітей</td>
             <td>м. Чернівці, Центральна площа, 9</td>
