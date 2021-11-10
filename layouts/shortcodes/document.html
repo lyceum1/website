@@ -20,7 +20,7 @@
         {{ if $isImage }}
             <img src="{{ index .Params 0 }}" alt=""></img>
         {{ else }}
-            <iframe src="{{ $document }}" loading="lazy" allowfullscreen frameborder="0"></iframe>
+            <iframe src="{{ printf $url $document }}" loading="lazy" allowfullscreen frameborder="0"></iframe>
         {{ end }}
     </div>
 </div>
