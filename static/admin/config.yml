@@ -3,6 +3,7 @@ backend:
   branch: dev
 
 media_folder: static/upload
+public_folder: /upload
 show_preview_links: false
 locale: uk
 
@@ -47,6 +48,8 @@ collections:
     label: Про нас
     summary: '{{title}}'
     folder: content/about
+    media_folder: ''
+    public_folder: ''
     nested:
       depth: 4
       summary: '{{title}}'
