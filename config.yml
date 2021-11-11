@@ -94,17 +94,23 @@ menu:
       url: /study/library/ebook/
 
     - name: Українська література
-      identifier: menu.study.library.list.ukrainian
+      identifier: menu.study.library.ukrainian
       weight: 2
       parent: menu.study.library
       url: /study/library/ukrainian/
 
     - name: Зарубіжна література
-      identifier: menu.study.library.list.foreign
+      identifier: menu.study.library.foreign
       weight: 3
       parent: menu.study.library
       url: /study/library/foreign/
-    
+
+    - name: Інтернет-джерела
+      identifier: menu.study.library.links
+      weight: 4
+      parent: menu.study.library
+      url: /study/library/links/
+
     - name: DMOJ
       identifier: menu.study.dmoj
       weight: 4
