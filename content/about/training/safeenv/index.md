@@ -2,4 +2,4 @@
 title: Кодекс безпечного освітнього середовища
 ---
 
-{{< document "code.pdf" "portrait" >}}
+{{< pdfjs file="code.pdf" ratio="A4" >}}

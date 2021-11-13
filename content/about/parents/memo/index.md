@@ -2,4 +2,4 @@
 title: Пам’ятка
 ---
 
-{{< document "memo.docx" "album" >}}
+{{< pdfjs file="memo.pdf" ratio="4to3" >}}

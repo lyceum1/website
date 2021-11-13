@@ -1,28 +1,42 @@
 CMS.registerEditorComponent({
     id: 'image',
     label: 'Зображення',
-    fields: [{
-        label: 'Файл',
-        name: 'image',
-        widget: 'image',
-        media_library: {
-          allow_multiple: false,
+    fields: [
+        {
+            label: 'Файл',
+            name: 'file',
+            widget: 'image',
+            media_library: {
+                allow_multiple: false,
+            },
         },
-    }],
-    pattern: /{{< image "(.+?)" >}}/,
+        {
+            label: 'Розмір',
+            name: 'ratio',
+            widget: 'image',
+            widget: 'select',
+            options: [
+                { label: 'Звичайний', value: '16to9' },
+                { label: 'Великий', value: 'A4' },
+            ],
+            default: ['16to9'],
+        }
+    ],
+    pattern: /{{< image file="(.+?)" ratio="(.+?)" >}}/,
     fromBlock: function(match){
         return {
-            image: match[1]
+            file: match[1],
+            ratio: match[2],
         };
     },
-    toBlock: ({ image }) => {
-        return `{{< image "${image}" >}}`;
+    toBlock: ({ file, ratio }) => {
+        return `{{< image file="${file}" ratio="${ratio}" >}}`;
     },
-    toPreview: ({ image }, getAsset, fields) => {
+    toPreview: ({ file, ratio }, getAsset, fields) => {
         const imageField = fields?.find(f => f.get('widget') === 'image');
-        const src = getAsset(image, imageField);
+        const src = getAsset(file, imageField);
         return `
-            <div class="embed_wrapper">
+            <div class="embed_wrapper r${ratio}">
                 <div class="embed">
                     <img src="${src || ''}" alt="" />
                 </div>
@@ -57,56 +71,174 @@ CMS.registerEditorComponent({
         `;
     },
 });
+
 CMS.registerEditorComponent({
-    id: 'document',
-    label: 'Документ',
+    id: 'pdfjs',
+    label: 'PDF',
     fields: [
         {
             label: 'Файл',
-            name: 'document',
+            name: 'file',
             widget: 'file',
             media_library: {
                 allow_multiple: false,
             },
         },
         {
-            label: 'Орієнтація',
-            name: 'orientation',
+            label: 'Розмір',
+            name: 'ratio',
             widget: 'select',
             options: [
-                { label: 'Альбомна', value: 'album' },
-                { label: 'Портретна', value: 'portrait' }
+                { label: 'A4', value: 'A4' },
+                { label: '4:3', value: '4to3' },
+                { label: '16:9', value: '16to9' },
             ],
-            default: ['album']
-        }
+            default: ['A4'],
+        },
     ],
-    pattern: /{{< document "(.+?)" "(.+?)" >}}/,
+    pattern: /{{< pdfjs file="(.+?)" ratio="(.+?)" >}}/,
     fromBlock: (match) => {
         return match && {
-            document: match[1],
-            orientation: match[2]
+            file: match[1],
+            ratio: match[2],
         };
     },
-    toBlock: ({ document, orientation }) => {
-        return `{{< document "${document}" "${orientation}" >}}`;
+    toBlock: ({ file, ratio }) => {
+        return `{{< pdfjs file="${file}" ratio="${ratio}" >}}`;
     },
-    toPreview: ({ document, orientation }, getAsset, fields) => {
+    toPreview: ({ file, ratio }, getAsset, fields) => {
         const fileField = fields?.find(f => f.get('widget') === 'file');
-        const src = getAsset(document, fileField);
-        const presentation = ['pptx', 'ppt'].find(ext => src?.url.endsWith(ext));
-        const image = ['png', 'jpg', 'jpeg'].find(ext => src?.url.endsWith(ext));
+        const src = getAsset(file, fileField);
+        const id = Math.floor(Math.random() * 1000000);
         return `
-            <div class="embed_wrapper ${orientation} ${presentation ? 'presentation' : ''}">
+            <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/build/pdf.min.js" integrity="sha256-hEmjt7z3bB53X/awJyV81gmBLpVw2mj7EsvoJelZWow=" crossorigin="anonymous"></script>
+            <div class="embed_wrapper r${ratio}">
                 <div class="embed">
-                ${
-                    image 
-                        ? `<img src="${src || ''}" alt=""></img>`
-                        : `<iframe allowfullscreen frameborder="0"
-                              src="${presentation ? '//view.officeapps.live.com/op/embed.aspx?src=' : '//docs.google.com/viewer?embedded=true&url='}${src || ''}">
-                          </iframe>`
-                }
+                    <canvas id="canvas_${id}"></canvas>
                 </div>
+                <ul class="pager paginator">
+                    <li><a role="button" id="prev_${id}">ᐊ</a></li>
+                    <li><a role="button" id="next_${id}">ᐅ</a></li>
+                    &nbsp;
+                    <li><a href="${file}" target="_blank"><i class="fas fa-external-link-alt"></i> PDF</a></li>
+                </ul>
             </div>
+
+            <script type="text/javascript">
+                window.addEventListener("load", function() {
+                    // Loaded via <script> tag, create shortcut to access PDF.js exports.
+                    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+                    // The workerSrc property shall be specified.
+                    pdfjsLib
+                        .GlobalWorkerOptions
+                        .workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/build/pdf.worker.min.js";
+
+                    // Change the scale value for lower or higher resolution.
+                    let pdfDoc = null;
+                    let pageNum = 1;
+                    let pageRendering = false;
+                    let pageNumPending = null;
+                    const scale = 3;
+                    const canvas = document.getElementById('canvas_${id}');
+                    const ctx = canvas.getContext('2d');
+
+                    /**
+                     * Get page info from document, resize canvas accordingly, and render page.
+                     * @param num Page number.
+                     */
+                    function renderPage(num) {
+                        pageRendering = true;
+
+                        // Using promise to fetch the page.
+                        pdfDoc
+                            .getPage(num)
+                            .then(function(page) {
+                                const viewport = page.getViewport({scale: scale});
+                                canvas.height = viewport.height;
+                                canvas.width = viewport.width;
+
+                                // Render PDF page into canvas context.
+                                const renderContext = {
+                                    canvasContext: ctx,
+                                    viewport: viewport
+                                };
+
+                                // Wait for rendering to finish.
+                                page.render(renderContext)
+                                    .promise
+                                    .then(function() {
+                                        pageRendering = false;
+                                        if (pageNumPending !== null) {
+                                            // New page rendering is pending.
+                                            renderPage(pageNumPending);
+                                            pageNumPending = null;
+                                        }
+                                    });
+                            });
+                    }
+
+                    /**
+                     * If another page rendering in progress, waits until the rendering is
+                     * finised. Otherwise, executes rendering immediately.
+                     */
+                    function queueRenderPage(num) {
+                        if (pageRendering) {
+                            pageNumPending = num;
+                        } else {
+                            renderPage(num);
+                        }
+                    }
+
+                    /**
+                     * Displays previous page.
+                     */
+                    function onPrevPage() {
+                        if (pageNum <= 1) {
+                            return;
+                        }
+
+                        --pageNum;
+                        queueRenderPage(pageNum);
+                    }
+
+                    document
+                        .getElementById('prev_${id}')
+                        .addEventListener('click', onPrevPage);
+
+                    /**
+                     * Displays next page.
+                     */
+                    function onNextPage() {
+                        if (pageNum >= pdfDoc.numPages) {
+                            return;
+                        }
+
+                        ++pageNum;
+                        queueRenderPage(pageNum);
+                    }
+
+                    document
+                        .getElementById('next_${id}')
+                        .addEventListener('click', onNextPage);
+
+                    /**
+                     * Asynchronously downloads PDF.
+                     */
+                    fetch('${src}')
+                        .then(response => response.blob())
+                        .then(blob => {
+                            pdfjsLib
+                                .getDocument({data: blob.text()})
+                                .promise
+                                .then(value => {
+                                    // Initial/first page rendering.
+                                    pdfDoc = value;
+                                    renderPage(pageNum);
+                                });
+                        });
+                });
+            </script>
         `;
     },
 });

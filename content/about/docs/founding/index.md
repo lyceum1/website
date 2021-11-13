@@ -4,20 +4,20 @@ title: Установчі документи
 
 ## Статут
 
-{{< document "regulations.pdf" "portrait" >}}
+{{< pdfjs file="regulations.pdf" ratio="A4" >}}
 
 ## Ліцензія
 
-{{< document "license.pdf" "portrait" >}}
+{{< pdfjs file="license.pdf" ratio="A4" >}}
 
 ## Свідоцтво про державну реєстрацію
 
-{{< document "cert.pdf" "portrait" >}}
+{{< pdfjs file="cert.pdf" ratio="A4" >}}
 
 ## Довідка з Єдиного державного реєстра
 
-{{< document "registration.pdf" "portrait" >}}
+{{< pdfjs file="registration.pdf" ratio="A4" >}}
 
 ## Стратегія розвитку
 
-{{< document "strategy.pdf" "portrait" >}}
+{{< pdfjs file="strategy.pdf" ratio="A4" >}}

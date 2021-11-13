@@ -3,14 +3,13 @@ title: Найцікавіше
 ---
 ### Емоції на полотні
 
-{{< document "emotions.pptx" "album" >}}
+{{< pdfjs file="emotions.pdf" ratio="4to3" >}}
 
 ### Згуртування класу під час адаптації до нових умов навчання
 
-{{< document "grouping.docx" "portrait" >}}
-
+{{< pdfjs file="grouping.pdf" ratio="A4" >}}
 
 
 ### 100 питань дитині
 
-{{< document "100questions.docx" "album" >}}
+{{< pdfjs file="100questions.pdf" ratio="4to3" >}}

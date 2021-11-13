@@ -4,16 +4,16 @@ title: Запобігання булінгу
 
 ## Накази Управління освіти Чернівецької міської ради
 
-{{< document "order_69.pdf" "portrait" >}}
+{{< pdfjs file="order_69.pdf" ratio="A4" >}}
 
 ## Про затвердження зaxодів щодо запобігання булінгу серед учнів ліцею на 2021 piк
 
-{{< document "order_lyceum.pdf" "portrait" >}}
+{{< pdfjs file="order_lyceum.pdf" ratio="A4" >}}
 
 ## Порядок подання та розгляду  (з дотриманням конфіденційності) заяв про випадки булінгу (цькування) в закладі освіти
 
-{{< document "order_lyceum_presentation.pdf" "portrait" >}}
+{{< pdfjs file="order_lyceum_presentation.pdf" ratio="A4" >}}
 
 ## Порядок реагування на доведені випадки булінгу (цькування) в закладі освіти та відповідальність осіб, причетних до булінгу (цькування)
 
-{{< document "order_lyceum_reaction.pdf" "portrait" >}}
+{{< pdfjs file="order_lyceum_reaction.pdf" ratio="A4" >}}

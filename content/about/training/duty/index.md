@@ -1,5 +1,4 @@
 ---
 title: Правила поведінки
 ---
-
-{{< document "rules.pdf" "portrait" >}}
+{{< pdfjs file="rules.pdf" ratio="A4" >}}

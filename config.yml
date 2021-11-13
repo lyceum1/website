@@ -13,7 +13,6 @@ markup:
       unsafe: true
 
 params:
-  author: Lyceum Dev Team
   defaultKeywords: [ліцей 1, сайт]
   mainSections: [news, study, about, contact]
   defaultDescription: Офіційний веб-сайт Чернівецького міського ліцею №1

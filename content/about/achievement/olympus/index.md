@@ -4,16 +4,16 @@ title: Ліцейський олімп
 
 ## Списки учнів-переможів за 2016 — 2017 н. р.
 
-{{< document "16_17.pdf" "album" >}}
+{{< pdfjs file="16_17.pdf" ratio="4to3" >}}
 
 ## Списки учнів-переможів за 2017 — 2018 н. р.
 
-{{< document "17_18.pdf" "album" >}}
+{{< pdfjs file="17_18.pdf" ratio="4to3" >}}
 
 ## Списки учнів-переможів за 2018 — 2019 н. р.
 
-{{< document "17_18.pdf" "album" >}}
+{{< pdfjs file="17_18.pdf" ratio="4to3" >}}
 
 ## Переможці інтернет-олімпіад за лютий – березень 2021 р.
 
-{{< document "io_2021.pdf" "portrait" >}}
+{{< pdfjs file="io_2021.pdf" ratio="A4" >}}

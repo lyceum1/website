@@ -6,8 +6,8 @@ title: Святкування
 
 #### Підготовка до Пасхи в 7-х класах (під керівництвом Подорожньої А. Ю.)
 
-{{< image "easter_works.jpg" >}}
+{{< image file="easter_works.jpg" ratio="16to9" >}}
 
 #### Особисті роботи Подорожньої А. Ю.
 
-{{< image "easter.jpg" >}}
+{{< image file="easter.jpg" ratio="16to9" >}}

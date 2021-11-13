@@ -4,4 +4,4 @@ title: Юні науковці
 
 ## 2017
 
-{{< document "scientists_2017.jpg" "portrait" >}}
+{{< image file="scientists_2017.jpg" ratio="A4" >}}

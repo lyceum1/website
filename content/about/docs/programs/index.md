@@ -2,4 +2,4 @@
 title: Освітні програми
 ---
 
-{{< document "programs.pdf" "portrait" >}}
+{{< pdfjs file="programs.pdf" ratio="A4" >}}

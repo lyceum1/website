@@ -1,0 +1,130 @@
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/build/pdf.min.js" integrity="sha256-hEmjt7z3bB53X/awJyV81gmBLpVw2mj7EsvoJelZWow=" crossorigin="anonymous"></script>
+{{ $file := .Get "file" }}
+{{ $ratio := .Get "ratio" }}
+{{ $id := substr (delimit (shuffle (split (md5 $file) "" )) "") 0 8 }}
+
+<div class="embed_wrapper r{{ $ratio }}">
+    <div class="embed">
+        <canvas id="canvas_{{ $id }}"></canvas>
+    </div>
+    <ul class="pager paginator">
+        <li><a role="button" id="prev_{{ $id }}">ᐊ</a></li>
+        <li><a role="button" id="next_{{ $id }}">ᐅ</a></li>
+        &nbsp;
+        <li><a href="{{ $file }}" target="_blank"><i class="fas fa-external-link-alt"></i> PDF</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    window.addEventListener("load", function() {
+        const url = '{{ $file }}';
+
+        // Loaded via <script> tag, create shortcut to access PDF.js exports.
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        // The workerSrc property shall be specified.
+        pdfjsLib
+            .GlobalWorkerOptions
+            .workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.9.359/build/pdf.worker.min.js";
+
+        // Change the scale value for lower or higher resolution.
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
+        let pageNumPending = null;
+        const scale = 3;
+        const canvas = document.getElementById('canvas_{{ safeJS $id }}');
+        const ctx = canvas.getContext('2d');
+
+        /**
+         * Get page info from document, resize canvas accordingly, and render page.
+         * @param num Page number.
+         */
+        function renderPage(num) {
+            pageRendering = true;
+
+            // Using promise to fetch the page.
+            pdfDoc
+                .getPage(num)
+                .then(function(page) {
+                    const viewport = page.getViewport({scale: scale});
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Render PDF page into canvas context.
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+
+                    // Wait for rendering to finish.
+                    page.render(renderContext)
+                        .promise
+                        .then(function() {
+                            pageRendering = false;
+                            if (pageNumPending !== null) {
+                                // New page rendering is pending.
+                                renderPage(pageNumPending);
+                                pageNumPending = null;
+                            }
+                        });
+                });
+        }
+
+        /**
+         * If another page rendering in progress, waits until the rendering is
+         * finised. Otherwise, executes rendering immediately.
+         */
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        /**
+         * Displays previous page.
+         */
+        function onPrevPage() {
+            if (pageNum <= 1) {
+                return;
+            }
+
+            --pageNum;
+            queueRenderPage(pageNum);
+        }
+
+        document
+            .getElementById('prev_{{ safeJS $id }}')
+            .addEventListener('click', onPrevPage);
+
+        /**
+         * Displays next page.
+         */
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) {
+                return;
+            }
+
+            ++pageNum;
+            queueRenderPage(pageNum);
+        }
+
+        document
+            .getElementById('next_{{ safeJS $id }}')
+            .addEventListener('click', onNextPage);
+
+        /**
+         * Asynchronously downloads PDF.
+         */
+        pdfjsLib
+            .getDocument(url)
+            .promise
+            .then(function(value) {
+                // Initial/first page rendering.
+                pdfDoc = value;
+                renderPage(pageNum);
+            });
+    });
+</script>

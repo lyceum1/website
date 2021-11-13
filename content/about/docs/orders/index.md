@@ -4,20 +4,20 @@ title: Накази
 
 ## Про вжиття невідкладних заходів в організації роботи Чернівецького ліцею №1 у період адаптивного карантину
 
-{{< document "n1.docx" "portrait" >}}
+{{< pdfjs file="n1.pdf" ratio="A4" >}}
 
 ## Про організацію початкового моніторингу 2020-2021 н.р.
 
-{{< document "n2.pdf" "portrait" >}}
+{{< pdfjs file="n2.pdf" ratio="A4" >}}
 
 ## Про проведення проміжного моніторингу 2020-2021 н.р.
 
-{{< document "n3.pdf" "portrait" >}}
+{{< pdfjs file="n3.pdf" ratio="A4" >}}
 
 ## Про підготовку випускників ліцею №1 до ЗНО-2021
 
-{{< document "n4.pdf" "portrait" >}}
+{{< pdfjs file="n4.pdf" ratio="A4" >}}
 
 ## План заходів щодо підготовки до ЗНО-2021
 
-{{< document "n5.pdf" "album" >}}
+{{< pdfjs file="n5.pdf" ratio="4to3" >}}

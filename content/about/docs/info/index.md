@@ -71,18 +71,18 @@ _**Навчальний заклад додаткових та інших пос
 
 ## Герб Чернівецького ліцею №1
 
-{{< image "emblem.png" >}}
+{{< image file="emblem.png" ratio="16to9" >}}
 
 ## Гімн ліцею
 
-{{< document "athem.jpg" "portrait" >}}
+{{< image file="athem.jpg" ratio="16to9" >}}
 
 ## Заповіді ліцеїста
 
-{{< document "commandments.jpg" "portrait" >}}
+{{< image file="commandments.jpg" ratio="16to9" >}}
 
 ## Наша історія
 
-{{< document "history.pptx" "album" >}}
+{{< pdfjs file="history.pdf" ratio="4to3" >}}
 
 ## [Ми у Вікіпедії](https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D1%96%D0%B2%D0%B5%D1%86%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BB%D1%96%D1%86%D0%B5%D0%B9_%E2%84%961)

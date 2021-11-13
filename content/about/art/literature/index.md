@@ -3,8 +3,8 @@ title: Літературна світлиця
 ---
 ## Нариси
 
-{{< document "essay.docx" "portrait" >}}
+{{< pdfjs file="essay.pdf" ratio="A4" >}}
 
 ## Мер — не посада, а покликання
 
-{{< document "burgomaster.docx" "portrait" >}}
+{{< pdfjs file="burgomaster.pdf" ratio="A4" >}}

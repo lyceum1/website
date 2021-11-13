@@ -2,4 +2,4 @@
 title: Навчальний план
 ---
 
-{{< document "roadmap.pdf" "portrait" >}}
+{{< pdfjs file="roadmap.pdf" ratio="A4" >}}

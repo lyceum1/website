@@ -2,4 +2,4 @@
 title: Колектив
 ---
 
-{{< document "staff.pdf" "album" >}}
+{{< pdfjs file="staff.pdf" ratio="4to3" >}}

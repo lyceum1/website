@@ -5,7 +5,7 @@ title: ГО «Інтеграл»
 <table class="table table-sm table-responsive table-bordered">
     <tbody>
         <tr>
-            <th>ЄДРПОУ</th>
+            <th>Код ЄДРПОУ</th>
             <td>35221185</td>
         </tr>
         <tr>
@@ -19,16 +19,16 @@ title: ГО «Інтеграл»
 
 ### I квартал
 
-{{< image "2020_1.png" >}}
+{{< image file="2020_1.png" ratio="16to9" >}}
 
 ### II квартал
 
-{{< image "2020_2.png" >}}
+{{< image file="2020_2.png" ratio="16to9" >}}
 
 ### III квартал
 
-{{< image "2020_3.png" >}}
+{{< image file="2020_3.png" ratio="16to9" >}}
 
 ### IV квартал
 
-{{< image "2020_4.png" >}}
+{{< image file="2020_4.png" ratio="16to9" >}}

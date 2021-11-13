@@ -4,20 +4,20 @@ title: Зразки документів
 
 ## Лист-попередження про права, обов’язки та відповідальність батьків за виховання і розвиток дитини
 
-{{< document "duty.pdf" "portrait" >}}
+{{< pdfjs file="duty.pdf" ratio="A4" >}}
 
 ## Заява про відсутність учня на уроках
 
-{{< document "missing.pdf" "portrait" >}}
+{{< pdfjs file="missing.pdf" ratio="A4" >}}
 
 ## Заява про зарахування до ліцею
 
-{{< document "accept.pdf" "portrait" >}}
+{{< pdfjs file="accept.pdf" ratio="A4" >}}
 
 ## Анкета для батьків щодо якості харчування
 
-{{< document "food_quality.pdf" "portrait" >}}
+{{< pdfjs file="food_quality.pdf" ratio="A4" >}}
 
 ## Згода на збір та обробку персональних даних
 
-{{< document "pii.pdf" "portrait" >}}
+{{< pdfjs file="pii.pdf" ratio="A4" >}}

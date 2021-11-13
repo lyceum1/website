@@ -20,7 +20,7 @@ title: Права дитини
     </tbody>
 </table>
 
-{{< image "balakin.jpg" >}}
+{{< image file="balakin.jpg" ratio="16to9" >}}
 
 ## Контакти уповноважених органів для реагування на порушення прав та свобод дитини
 
@@ -58,7 +58,7 @@ title: Права дитини
 
 ## Презентація про права дитини
 
-{{< document "child-rights.pptx" "album" >}}
+{{< pdfjs file="child_rights.pdf" ratio="16to9" >}}
 
 ## Історія права людини
 

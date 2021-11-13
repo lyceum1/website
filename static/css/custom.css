@@ -1,20 +1,24 @@
 .embed {
     position: relative;
-    padding-bottom: 56.25%;
     background: url("/img/loading.gif") center center no-repeat;
     background-size: 10%;
 }
 
-.embed_wrapper.portrait > .embed {
-    padding-bottom: 131%;
+.r4to3 > .embed {
+    padding-bottom: 75%;
 }
 
-.embed_wrapper.presentation > .embed {
-    padding-bottom: 78.5%;
+.r16to9 > .embed {
+    padding-bottom: 56.25%;
+}
+
+.rA4 > .embed {
+    padding-bottom: 141%;
 }
 
 .embed > iframe,
-.embed > img {
+.embed > img,
+.embed > canvas {
     border: none;
     position: absolute;
     top: 0;
@@ -33,12 +37,18 @@
 
 @media (min-width: 768px) {
     .embed_wrapper {
-        padding: 25px 10%;
+        padding: 20px 10%;
     }
-    .embed_wrapper.portrait {
-        padding: 25px 25%;
+    .embed_wrapper.rA4 {
+        padding: 20px 15%;
     }
-    .embed_wrapper.presentation {
-        padding: 25px 20%;
-    }
+}
+
+.embed {
+    border: 2px solid #6aae7a;
+}
+
+.paginator {
+    margin: 0;
+    padding-top: 2px;
 }

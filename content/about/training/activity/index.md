@@ -4,42 +4,42 @@ title: Діяльність закладу
 
 ## Звіт про виховні заходи за  2020 — 2021 н. р.
 
-{{< document "report_20_21.pdf" "album" >}}
+{{< pdfjs file="report_20_21.pdf" ratio="4to3" >}}
 
 ## План заходів на 2021 рік щодо реалізації Стратегії національно-патріотичного виховання на 2020 — 2025 роки у закладах освіти Чернівецької територіальної громади
 
-{{< document "order.pdf" "portrait" >}}
+{{< pdfjs file="order.pdf" ratio="A4" >}}
 
-{{< document "plan.docx" "portrait" >}}
+{{< pdfjs file="plan.pdf" ratio="4to3" >}}
 
 ## Стратегія національно-патріотичного виховання на 2020 — 2025 роки у Чернівецькому ліцеї №1
 
-{{< document "plan_lyceum.docx" "portrait" >}}
+{{< pdfjs file="plan_lyceum.pdf" ratio="A4" >}}
 
 ## Конкурс-захист виховних проектів на тему  «Я — Ми — Родина — Україна»
 
-{{< document "i_we_family_ukraine.pdf" "album" >}}
+{{< pdfjs file="i_we_family_ukraine.pdf" ratio="16to9" >}}
 
 ## Звіт про виховні заходи за І семестр 2020 — 2021 н. р.
 
-{{< document "report_20_21_1.pptx" "album" >}}
+{{< pdfjs file="report_20_21_1.pdf" ratio="4to3" >}}
 
 ## Звіт про виховні заходи 2019 — 2020 н.р.
 
-{{< document "report_19_20.pdf" "album" >}}
+{{< pdfjs file="report_19_20.pdf" ratio="4to3" >}}
 
 ## Благодійні акції для учасників АТО
 
-{{< document "war.pptx" "album" >}}
+{{< pdfjs file="war.pdf" ratio="16to9" >}}
 
 ## Захід, присвячений Революції Гідності
 
-{{< document "revolution_of_dignity.pptx" "album" >}}
+{{< pdfjs file="revolution_of_dignity.pdf" ratio="4to3" >}}
 
 ## Пам’яті Небесної Сотні
 
-{{< document "heavenly_hundred.pptx" "album" >}}
+{{< pdfjs file="heavenly_hundred.pdf" ratio="4to3" >}}
 
 ## Проєктна діяльність в роботі
 
-{{< document "project_work.pptx" "album" >}}
+{{< pdfjs file="project_work.pdf" ratio="4to3" >}}
