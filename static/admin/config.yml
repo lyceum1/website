@@ -15,8 +15,10 @@ collections:
     description: >
       Розділ керування новинами сайту.
     folder: content/news
+    media_folder: '/content/news/{{year}}/{{month}}/{{day}}'
+    public_folder: '/news/{{year}}/{{month}}/{{day}}'
     create: true
-    slug: '{{slug}}'
+    slug: '{{fields.slug}}'
     path: '{{year}}/{{month}}/{{day}}/{{slug}}'
     filter: 
       field: visible
@@ -25,7 +27,7 @@ collections:
       preview: true
     fields:
       - { label: Заголовок, name: title, widget: string }
-      - { label: Зображення, name: banner, widget: image, hint: Рекомендоване відношення сторін 3:2 }
+      - { label: Зображення, name: banner, widget: image, hint: 'Рекомендоване відношення сторін 3:2. [Сторінка з зображеннями, які ми підготували для вас](/aux/presets/).'}
       - { label: Дата, name: date, widget: datetime }
       - { label: Зміст, name: body, widget: markdown, hint: Основний вміст новини }
       - { label: Видимий, name: visible, widget: hidden, default: true }

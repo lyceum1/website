@@ -1,0 +1,22 @@
+{{ $file := .Get "file" }}
+
+<div class="preset">
+    <div class="embed_wrapper r16to9">
+        <div class="embed">
+            <img src="{{ $file }}" alt=""></img>
+        </div>
+        <ul class="pager paginator">
+            <li><a role="button" onclick="copy('{{ $file }}'); return false;"><i class="fas fa-copy"></i> Копіювати</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    function copy(photoPath) {
+        const element = document.createElement('textarea');
+        element.value = photoPath;
+        document.body.appendChild(element);
+        element.select();
+        document.execCommand('copy');
+        document.body.removeChild(element);
+    }
+</script>

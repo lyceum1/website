@@ -23,7 +23,7 @@ CMS.registerEditorComponent({
         }
     ],
     pattern: /{{< image file="(.+?)" ratio="(.+?)" >}}/,
-    fromBlock: function(match){
+    fromBlock: (match) => {
         return {
             file: match[1],
             ratio: match[2],
@@ -53,7 +53,7 @@ CMS.registerEditorComponent({
         widget: 'string'
     }],
     pattern: /{{< youtube "(.+?)" >}}/,
-    fromBlock: function(match) {
+    fromBlock: (match) => {
         return {
             id: match[1],
         };
@@ -98,7 +98,7 @@ CMS.registerEditorComponent({
     ],
     pattern: /{{< pdfjs file="(.+?)" ratio="(.+?)" >}}/,
     fromBlock: (match) => {
-        return match && {
+        return {
             file: match[1],
             ratio: match[2],
         };
@@ -124,6 +124,7 @@ CMS.registerEditorComponent({
                 </ul>
             </div>
 
+            <!--
             <script type="text/javascript">
                 window.addEventListener("load", function() {
                     // Loaded via <script> tag, create shortcut to access PDF.js exports.
@@ -239,6 +240,7 @@ CMS.registerEditorComponent({
                         });
                 });
             </script>
+            -->
         `;
     },
 });
@@ -311,6 +313,102 @@ const pagePreview = createClass({
     }
 });
 
+function makeSlug(input) {
+    if (!input) {
+        return "";
+    }
+
+    const firstAssociations = {
+        "а": "a",
+        "б": "b",
+        "в": "v",
+        "д": "d",
+        "з": "z",
+        "й": "y",
+        "к": "k",
+        "л": "l",
+        "м": "m",
+        "н": "n",
+        "о": "o",
+        "п": "p",
+        "р": "r",
+        "с": "s",
+        "т": "t",
+        "у": "u",
+        "ф": "f",
+        "ь": "",
+        "г": "h",
+        "ґ": "g",
+        "е": "e",
+        "и": "y",
+        "і": "i",
+        "ж": "zh",
+        "х": "kh",
+        "ц": "ts",
+        "ч": "ch",
+        "ш": "sh",
+        "щ": "shch",
+        "ю": "yu",
+        "я": "ya",
+        "є": "ye",
+        "ї": "yi",
+    };
+
+    const rest = Object.assign({}, firstAssociations, {
+        "й": "i",
+        "ї": "i",
+        "є": "ie",
+        "ю": "iu",
+        "я": "ia",
+    });
+
+    // We must normalize string for transform all unicode chars to uniform form.
+    // Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
+    const normalized = input.normalize();
+
+    let result = '';
+    let isWordBoundary = false;
+    for (let i = 0; i < normalized.length; ++i) {
+        const letter = normalized[i].toLowerCase();
+
+        if (letter === ' ') {
+            result += '-';
+            isWordBoundary = true;
+            continue;
+        }
+
+        let newLetter;
+        if (normalized.slice(i - 1, i + 1).toLowerCase() === "зг") {
+            newLetter = "gh";
+        } else if (i === 0 || isWordBoundary) {
+            newLetter = firstAssociations[letter];
+            isWordBoundary = false;
+        } else {
+            newLetter = rest[letter];
+        }
+
+        if (!newLetter) {
+            if (letter.match(/[a-z0-9_-]/i)) {
+                result += letter;
+            }
+        } else {
+            result += newLetter;
+        }
+    }
+
+    return result;
+}
+
+CMS.registerEventListener({
+    name: 'preSave',
+    handler: ({ entry }) => {
+        if (entry.get('collection') === 'news') {
+            return entry.get('data').set('slug', makeSlug(entry.get('data').get('title')))
+        }
+
+        return entry.get('data');
+    },
+});
 CMS.registerPreviewStyle('//use.fontawesome.com/releases/v5.11.2/css/all.css');
 CMS.registerPreviewStyle('//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 CMS.registerPreviewStyle('/css/style.green.css');

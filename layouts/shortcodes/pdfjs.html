@@ -3,16 +3,18 @@
 {{ $ratio := .Get "ratio" }}
 {{ $id := substr (delimit (shuffle (split (md5 $file) "" )) "") 0 8 }}
 
-<div class="embed_wrapper r{{ $ratio }}">
-    <div class="embed">
-        <canvas id="canvas_{{ $id }}"></canvas>
+<div class="pdf">
+    <div class="embed_wrapper r{{ $ratio }}">
+        <div class="embed">
+            <canvas id="canvas_{{ $id }}"></canvas>
+        </div>
+        <ul class="pager paginator">
+            <li><a role="button" id="prev_{{ $id }}">ᐊ</a></li>
+            <li><a role="button" id="next_{{ $id }}">ᐅ</a></li>
+            &nbsp;
+            <li><a href="{{ $file }}" target="_blank"><i class="fas fa-external-link-alt"></i> PDF</a></li>
+        </ul>
     </div>
-    <ul class="pager paginator">
-        <li><a role="button" id="prev_{{ $id }}">ᐊ</a></li>
-        <li><a role="button" id="next_{{ $id }}">ᐅ</a></li>
-        &nbsp;
-        <li><a href="{{ $file }}" target="_blank"><i class="fas fa-external-link-alt"></i> PDF</a></li>
-    </ul>
 </div>
 
 <script type="text/javascript">

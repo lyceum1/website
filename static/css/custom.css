@@ -39,12 +39,18 @@
     .embed_wrapper {
         padding: 20px 10%;
     }
+
     .embed_wrapper.rA4 {
         padding: 20px 15%;
     }
+
+    .preset .embed_wrapper {
+        padding: 0 25%;
+    }
 }
 
-.embed {
+.pdf .embed,
+.preset .embed {
     border: 2px solid #6aae7a;
 }
 
