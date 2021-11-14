@@ -2,18 +2,20 @@
 title: ГО «Інтеграл»
 ---
 
-<table class="table table-sm table-responsive table-bordered">
-    <tbody>
-        <tr>
-            <th>Код ЄДРПОУ</th>
-            <td>35221185</td>
-        </tr>
-        <tr>
-            <th>№ рахунку</th>
-            <td>UA163562820000026004051528492 в АТ КБ «ПРИВАТБАНК»</td>
-        </tr>
-    </tbody>
-</table>
+<div class="table">
+    <table class="table table-responsive table-bordered">
+        <tbody>
+            <tr>
+                <th>Код ЄДРПОУ</th>
+                <td>35221185</td>
+            </tr>
+            <tr>
+                <th>№ рахунку</th>
+                <td>UA163562820000026004051528492 в АТ КБ «ПРИВАТБАНК»</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ## 2020 рік
 

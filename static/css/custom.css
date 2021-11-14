@@ -58,3 +58,7 @@
     margin: 0;
     padding-top: 2px;
 }
+
+.table {
+    overflow-x: auto;
+}

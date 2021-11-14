@@ -13,7 +13,7 @@ title: Розклад
 
 ### Розклад дзвінків
 
-<table class="table table-sm table-responsive table-bordered">
+<table class="table table-responsive table-bordered">
     <thread>
         <tr>
             <th class="text-center">№ пари</th>

@@ -1,6 +1,15 @@
+site_url: https://lyceum1.netlify.app
+
 backend:
   name: git-gateway
   branch: dev
+  commit_messages:
+    create: Create “{{slug}}”
+    update: Update “{{slug}}”
+    delete: Delete “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
 
 media_folder: static/upload
 public_folder: /upload
@@ -27,7 +36,12 @@ collections:
       preview: true
     fields:
       - { label: Заголовок, name: title, widget: string }
-      - { label: Зображення, name: banner, widget: image, hint: 'Рекомендоване відношення сторін 3:2. [Сторінка з зображеннями, які ми підготували для вас](/aux/presets/).'}
+      - label: Зображення
+        name: banner
+        widget: image
+        media_library:
+          allow_multiple: false
+        hint: 'Рекомендоване відношення сторін 3:2. [Сторінка з зображеннями, які ми підготували для вас](/aux/presets/).'
       - { label: Дата, name: date, widget: datetime }
       - { label: Зміст, name: body, widget: markdown, hint: Основний вміст новини }
       - { label: Видимий, name: visible, widget: hidden, default: true }

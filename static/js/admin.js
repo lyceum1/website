@@ -82,6 +82,7 @@ CMS.registerEditorComponent({
             widget: 'file',
             media_library: {
                 allow_multiple: false,
+                choose_url: false,
             },
         },
         {

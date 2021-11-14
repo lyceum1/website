@@ -2,7 +2,7 @@
 title: Загальна інформація
 ---
 
-<table class="table table-sm table-responsive table-bordered">
+<table class="table table-responsive table-bordered">
     <tbody>
         <tr>
             <th>Повна назва</th>

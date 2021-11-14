@@ -7,8 +7,8 @@ slug: hrafik-vstupnykh-ispytiv
 ---
 
 ## Розклад вступних іспитів для 6 – 11 класів
-<div style="overflow-x:auto;">
-    <table class="table table-sm table-responsive table-bordered">
+<div class="table">
+    <table class="table table-responsive table-bordered">
         <thread>
             <tr>
                 <th class="text-center">Дата</th>

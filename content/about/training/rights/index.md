@@ -3,7 +3,7 @@ title: Права дитини
 ---
 ## Інспектор СЮП ВП Чернівецького РУП ГУНП в Чернівецькій області
 
-<table class="table table-sm table-responsive table-bordered">
+<table class="table table-responsive table-bordered">
     <thread>
         <tr>
             <th class="text-center">Ім’я</th>
