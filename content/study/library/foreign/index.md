@@ -1,5 +1,6 @@
 ---
 title: Зарубіжна література
+visible: true
 ---
 
 ### 6-й клас
@@ -286,7 +287,7 @@ title: Зарубіжна література
 
 * **Ф. Достоєвський** [«Злочин і кара»](https://www.ukrlib.com.ua/world/printit.php?tid=798)
 
-* **Шарль Бодлер ** [Твори](https://www.ukrlib.com.ua/world/author.php?id=80)
+* **Шарль Бодлер** [Твори](https://www.ukrlib.com.ua/world/author.php?id=80)
 
 * **Поль-Марі Верлен** [Твори](https://www.ukrlib.com.ua/world/author.php?id=84)
 

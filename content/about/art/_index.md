@@ -1,3 +1,4 @@
 ---
 title: Творчість
+visible: false
 ---

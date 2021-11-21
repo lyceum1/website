@@ -1,3 +1,4 @@
 ---
 title: Бібліотека
+visible: false
 ---

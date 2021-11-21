@@ -1,5 +1,6 @@
 ---
 title: ГО «Інтеграл»
+visible: true
 ---
 
 <div class="table">

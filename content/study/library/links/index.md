@@ -1,5 +1,6 @@
 ---
 title: Інтернет-джерела
+visible: true
 ---
 
 * [Електронна бібліотека України](http://www.elibukr.org/)

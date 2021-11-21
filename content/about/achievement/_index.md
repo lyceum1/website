@@ -1,3 +1,4 @@
 ---
 title: Досягнення
+visible: false
 ---

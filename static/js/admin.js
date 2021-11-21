@@ -126,6 +126,7 @@ CMS.registerEditorComponent({
             </div>
 
             <!--
+            // FIXME: this thing doesn't work for no reason and is hardly debuggable.
             <script type="text/javascript">
                 window.addEventListener("load", function() {
                     // Loaded via <script> tag, create shortcut to access PDF.js exports.

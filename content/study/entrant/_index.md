@@ -1,3 +1,4 @@
 ---
 title: Абітурієнту
+visible: false
 ---

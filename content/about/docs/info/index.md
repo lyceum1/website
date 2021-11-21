@@ -1,5 +1,6 @@
 ---
 title: Загальна інформація
+visible: true
 ---
 
 <table class="table table-responsive table-bordered">
