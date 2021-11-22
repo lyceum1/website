@@ -63,7 +63,7 @@ CMS.registerEditorComponent({
     },
     toPreview: ({ id }) => {
         return `
-            <div class="embed_wrapper">
+            <div class="embed_wrapper r16to9">
                 <div class="embed">
                     <iframe src="//youtube.com/embed/${id}" title="Youtube Video Player" allowfullscreen></iframe>
                 </div>
